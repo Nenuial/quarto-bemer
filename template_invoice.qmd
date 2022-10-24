@@ -1,0 +1,48 @@
+---
+name: Hans Muster
+address: Rue Centrale
+number: 1
+zip: 1111
+toplace: Perpette-les-Oies
+country: CH
+
+date: 2022-01-01
+date-format: long
+
+fac-num: 22050601
+fac-iban: "CH0000000000000000000"
+fac-name: "Amandine & Pascal Burkhard"
+fac-address: "Chemin du Marais"
+fac-address-number: "10"
+fac-zip: "1031"
+fac-place: "Mex"
+fac-country: "CH"
+
+author: "Jean Peuplus"
+place: "Mex"
+
+return-email: "abc@cde.fg"
+return-phone: "012 345 67 89"
+return-url: "https://cde.fg"
+return-address: 
+  - "Ch. du Coin"
+  - "CH-1235 Perpette-les-Bains"
+
+subject: Facture
+opening: Monsieur,
+closing: Avec mes meilleures salutations,
+signature: Jean Peuplus
+
+format: bemer-invoice-pdf
+---
+
+```{=latex}
+%-------Références Bemer et quantités-------------------------------
+% BemerRef/BemerCadeau 3 paramètres : référence, quantité, num série
+% BemerRefPerso 5 paramètres : référence, description, num série, quantité, prix
+% BemerPerso 3 paramètres : description, quantité, prix
+% BemerPorto 2 paramètres : frais de port, quantité
+
+\BemerRef{412300}{1}{4123002022000000}
+```
+

@@ -1,0 +1,70 @@
+\usepackage{datatool}
+\usepackage{longtable,tabularx,ltxtable}
+\usepackage{array,multirow,multicol,booktabs,hhline}
+\usepackage[normalem]{ulem}
+\usepackage{fp}
+\usepackage{mdframed}
+\usepackage{pgf,pgfplotstable}
+
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+\def\BemerCurrency {~\footnotesize CHF}
+
+\DTLloaddb{bemer}{prix.csv}	
+\DTLnewdb{facturation}
+
+\newcommand{\BemerRef}[3]{%
+	\DTLnewrow{facturation}%
+	\DTLnewdbentry{facturation}{ref}{#1}%
+	\DTLnewdbentry{facturation}{serial}{#3}%
+	\DTLnewdbentry{facturation}{desc}{\DTLfetch{bemer}{ref}{#1}{description}}%
+	\DTLnewdbentry{facturation}{pce}{#2}%
+	\DTLgetvalueforkey{\TempPrice}{vente}{bemer}{ref}{#1}
+	\DTLmul{\TempPrice}{\TempPrice}{#2}	
+	\dtlexpandnewvalue
+	\DTLnewdbentry{facturation}{price}{\TempPrice}%
+	\dtlnoexpandnewvalue
+}
+\newcommand{\BemerRefPerso}[5]{%
+	\DTLnewrow{facturation}%
+	\DTLnewdbentry{facturation}{ref}{#1}%
+	\DTLnewdbentry{facturation}{serial}{#3}%
+	\DTLnewdbentry{facturation}{desc}{#2}%
+	\DTLnewdbentry{facturation}{pce}{#4}%
+	\DTLnewdbentry{facturation}{price}{#5}%
+	\dtlnoexpandnewvalue
+}
+\newcommand{\BemerCadeau}[3]{%
+	\DTLnewrow{facturation}%
+	\DTLnewdbentry{facturation}{ref}{#1}%
+	\DTLnewdbentry{facturation}{serial}{#3}%
+	\DTLnewdbentry{facturation}{desc}{\DTLfetch{bemer}{ref}{#1}{description}}%
+	\DTLnewdbentry{facturation}{pce}{#2}%
+	\DTLnewdbentry{facturation}{price}{0}%
+}
+\newcommand{\BemerPorto}[2]{%
+	\DTLnewrow{facturation}%
+	\DTLnewdbentry{facturation}{ref}{--}%
+	\DTLnewdbentry{facturation}{serial}{0}%
+	\DTLnewdbentry{facturation}{desc}{Frais de port}%
+	\DTLnewdbentry{facturation}{pce}{#2}%
+	\DTLnewdbentry{facturation}{price}{#1}%
+}
+\newcommand{\BemerDeposit}[1]{%
+	\DTLnewrow{facturation}%
+	\DTLnewdbentry{facturation}{ref}{--}%
+	\DTLnewdbentry{facturation}{serial}{0}%
+	\DTLnewdbentry{facturation}{desc}{Acompte}%
+	\DTLnewdbentry{facturation}{pce}{1}%
+	\DTLnewdbentry{facturation}{price}{#1}%
+}
+\newcommand{\BemerPerso}[3]{%
+	\DTLnewrow{facturation}%
+	\DTLnewdbentry{facturation}{ref}{--}%
+	\DTLnewdbentry{facturation}{serial}{0}%
+	\DTLnewdbentry{facturation}{desc}{#1}%
+	\DTLnewdbentry{facturation}{pce}{#2}%
+	\DTLnewdbentry{facturation}{price}{#3}%
+}

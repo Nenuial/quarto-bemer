@@ -1,0 +1,30 @@
+---
+address:
+  - BEMER Int. AG
+  - Kundenservice
+  - Austrasse 15
+  - LI-9495 Triesen
+
+date: 2022-01-01
+date-format: long
+author: "Jean Peuplus"
+place: "Mex"
+
+return-email: "abc@cde.fg"
+return-phone: "012 345 67 89"
+return-url: "https://cde.fg"
+return-address: 
+  - "Ch. du Coin"
+  - "CH-1235 Perpette-les-Bains"
+
+subject: Reparatur
+opening: Sehr geehrte Damen und Herren,
+closing: Mit freundlichen Grüssen,
+signature: Jean Peuplus
+
+format:
+  bemer-letter-pdf:
+    lang: de-CH
+---
+
+Anbei finden Sie ein B.BODY Applikationsmodul. Dieses Modul meldet einen Fehler. Bitte überprüfen und einen Kostenvorschlag für die Reparaturskosten machen.

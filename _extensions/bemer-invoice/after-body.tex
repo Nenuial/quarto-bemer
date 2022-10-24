@@ -1,0 +1,73 @@
+Voici le détail de votre facture :
+
+\edef\hc{\string:}
+\DTLsumcolumn{facturation}{price}{\SubTot}
+\DTLconverttodecimal{\SubTot}{\SubTot}
+\pgfmathprintnumberto[/pgf/fpu=true, /pgf/number format/fixed, /pgf/number format/precision=2, /pgf/number format/fixed zerofill, /pgf/number format/1000 sep={'}]{\SubTot}{\FacTot}
+\pgfmathprintnumberto[/pgf/fpu=true, /pgf/number format/fixed, /pgf/number format/precision=2, /pgf/number format/fixed zerofill, /pgf/number format/1000 sep={}]{\SubTot}{\FacQRTot}
+
+\global\edef\facamount{\SubTot}
+
+\begin{tabular}{@{}p{2.5cm}@{} @{}p{8.5cm}@{} @{}R{2.5cm}@{} @{}R{3.5cm}@{}}
+	\textbf{Réf.} & \textbf{Désignation} & \textbf{Quantité} & \textbf{Montant}
+	\DTLforeach{facturation}{%
+		\BemerRef=ref,\BemerDesc=desc,\BemerPce=pce,\BemerPrice=price,\BemerSerial=serial}{%
+		\DTLiffirstrow{\\\midrule}{\\}%
+		\ifthenelse{\equal{\BemerPrice}{0}}{%
+			\BemerRef%
+			& \BemerDesc%
+			& \BemerPce%
+			& ---%
+			}{%
+			\BemerRef%
+			& \BemerDesc%
+			& \BemerPce%
+			& \DTLconverttodecimal{\BemerPrice}{\result}\pgfmathprintnumber[%
+				/pgf/number format/fixed,%
+				/pgf/number format/precision=2,%
+				/pgf/number format/fixed zerofill,%
+				/pgf/number format/1000 sep={'}]{\result}\BemerCurrency%
+			}%
+		\ifthenelse{\equal{\BemerSerial}{0}}{}{%
+			\\%
+			& \emph{S/N:} \BemerSerial &&~}%
+	}
+	\\\\
+	
+	
+	\multicolumn{3}{r@{}}{\textbf{Total}} & \uline{$$\mathbf{\FacTot}$$\BemerCurrency}\\
+\end{tabular}
+
+\vspace{1cm}
+\textbf{Paiement net à 30 jours.}
+\vspace{1cm}
+
+
+$if(closing)$\closing{$closing$}$endif$
+$if(encl)$\encl{$for(encl)$$encl$$sep$\\$endfor$}$endif$
+$if(cc)$\cc{$for(cc)$$cc$$sep$\\$endfor$}$endif$
+$if(ps)$\ps{$ps$}$endif$
+
+\end{letter}
+
+\clearpage
+\thispagestyle{empty}
+\newgeometry{margin=0cm,left=0cm,top=190mm,right=0cm}
+\QRbill[
+  creditor*={$fac-name$\\
+    $fac-address$\\
+    $fac-address-number$\\
+    $fac-zip$\\
+    $fac-place$\\
+    $fac-country$},
+  Account=$fac-iban$,
+  debtor*={$name$\\
+    $address$\\
+    $number$\\
+    $zip$\\
+    $toplace$\\
+    $country$},
+  Amount=\facamount,
+  Message=Facture $fac-num$,
+  invoicenum=$fac-num$,
+]
