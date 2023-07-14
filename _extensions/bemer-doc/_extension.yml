@@ -1,6 +1,6 @@
 title: Bemer Document
 author: Pascal Burkhard
-version: 1.0.0
+version: 1.0.1
 contributes:
   format:
     pdf:
@@ -12,10 +12,10 @@ contributes:
       include-in-header: 
         - header-setup.tex
       logo: bemerpartner.png
-      documentclass: scrlttr2
       papersize: a4
       colorlinks: false
       lang: fr-CH
+      number-sections: true
       geometry:
         - bindingoffset=0cm
         - left=2cm
