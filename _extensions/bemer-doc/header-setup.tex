@@ -2,6 +2,7 @@
 \usepackage{datatool}
 \usepackage{longtable,tabularx,ltxtable}
 \usepackage{array,multirow,multicol,booktabs,hhline}
+\usepackage{colortbl}
 \usepackage{pifont}
 \usepackage{graphicx,lastpage}
 \usepackage[export]{adjustbox}
@@ -32,3 +33,104 @@
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
 \newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+%------------------------------------------------
+\usepackage{mdframed}
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  backgroundcolor=lgray,
+  linecolor=bemertrue,
+  linewidth=.13cm,
+  skipabove=0pt,
+  skipbelow=.3cm,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  innertopmargin=.3cm,
+  innerbottommargin=.3cm,
+  innerleftmargin=.8cm,
+  innerrightmargin=.5cm,
+]{combox}
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  leftline=false,
+  rightline=false,
+  backgroundcolor=white,
+  linecolor=black,
+  linewidth=.01cm,
+  skipabove=0pt,
+  skipbelow=0pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  innertopmargin=.1cm,
+  innerbottommargin=.1cm,
+  innerleftmargin=.2cm,
+  innerrightmargin=.5cm,
+]{cfield}
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  leftline=false,
+  rightline=false,
+  backgroundcolor=white,
+  linecolor=black,
+  linewidth=.01cm,
+  skipabove=0pt,
+  skipbelow=0pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  innertopmargin=.1cm,
+  innerbottommargin=.1cm,
+  innerleftmargin=.2cm,
+  innerrightmargin=.5cm,
+]{rfield}
+
+\newcommand{\bField}[1]{\TextField[name=#1,
+		   width=\linewidth,
+		   bordercolor=,
+		   backgroundcolor=,
+           format = {
+               var f = this.getField('#1');
+               f.textFont = 'Times New Roman';
+               f.strokeColor = ['T'];
+               f.fillColor = ['T'];
+               },
+           charsize = 10pt]
+          {\null}}
+          
+\newcommand{\bFieldR}[1]{\TextField[name=#1,
+		   width=\linewidth,
+		   bordercolor=,
+		   backgroundcolor=,
+		   align=2,
+           format = {
+               var f = this.getField('#1');
+               f.textFont = 'Times New Roman';
+               f.strokeColor = ['T'];
+               f.fillColor = ['T'];
+               },
+           charsize = 10pt]
+          {\null}}
+          
+\newcommand{\bArea}[2]{\TextField[name=#1,
+		   width=\linewidth,
+		   bordercolor=,
+		   backgroundcolor=,
+		   height=#2,
+		   multiline=true,
+           format = {
+               var f = this.getField('#1');
+               f.textFont = 'Times New Roman';
+               f.strokeColor = ['T'];
+               f.fillColor = ['T'];
+               },
+           charsize = 10pt]
+          {\null}}
+          
+\newcommand{\bCheck}[1]{\raisebox{.1cm}{%
+			\CheckBox[name=#1,
+			   width=.2cm,
+			   height=.2cm,
+			   bordercolor=black,
+			   backgroundcolor=]{\null}}}
