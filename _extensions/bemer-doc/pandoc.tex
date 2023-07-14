@@ -1,0 +1,37 @@
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+$tightlist.tex()$
+$tables.tex()$
+$graphics.tex()$
+$citations.tex()$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\usepackage{fancyhdr}
+\fancyhf{} % clear all header and footer fields
+
+\tcbuselibrary{skins}
+
+\fancyhead[L]{\begin{minipage}[b]{8cm}
+	\Large\textbf{$title$}\\\large $subtitle$
+\end{minipage}}
+\fancyhead[C]{}
+\fancyhead[R]{\begin{minipage}[br]{8cm}%
+\begin{tcolorbox}[enhanced, frame hidden, borderline west = {1pt}{0pt}{bblue}, sharp corners=all, right=0cm, leftrule=.1cm, rightrule=0cm, boxsep=0cm, titlerule=0cm, toprule=0cm, bottomrule=0cm, colback=white, opacityfill=1]
+\RaggedLeft\large\bfseries\color{bemertrue}$bemer-name$\\%
+\color{black}\normalfont $bemer-title$\\%
+\href{mailto:$bemer-mail$}{$bemer-mail$}\\% 
+\href{$bemer-url$}{$bemer-url$}\\ 
+$bemer-phone$
+\end{tcolorbox}%
+\end{minipage}}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage/\pageref{LastPage}}
+\fancyfoot[R]{\includegraphics[width=5cm]{$logo$}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}

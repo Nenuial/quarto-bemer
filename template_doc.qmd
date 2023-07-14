@@ -1,0 +1,18 @@
+---
+title: Test document
+subtitle: Example
+
+bemer-name: Hans Muster
+bemer-title: Bemer Salesman
+bemer-mail: hans.muster@bemermail.com
+bemer-url: https://hans.bemergroup.com
+bemer-phone: 012 345 67 89
+
+format: bemer-doc-pdf
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sem purus, egestas ut nulla placerat, sodales venenatis nisi. Quisque commodo malesuada ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam facilisis consequat velit. Sed ut volutpat magna. Fusce quis tincidunt quam. Suspendisse pretium non lectus a fringilla. Nam eleifend dictum augue quis aliquet.
+
+Aenean viverra consequat nisi. Integer convallis, sem eu consequat vestibulum, lectus urna posuere turpis, a pharetra risus lacus quis ipsum. Etiam nec sapien metus. Mauris dui metus, accumsan sit amet neque non, feugiat faucibus nibh. Duis quis neque ac odio dictum pharetra. Quisque venenatis sodales arcu ac efficitur. Curabitur viverra augue non varius tristique. Sed nulla elit, varius id dolor eget, pulvinar accumsan libero. Aenean metus risus, ornare ut ornare ut, mollis in diam. Nullam mi lacus, blandit vitae lacus feugiat, placerat porta enim. Nullam interdum felis sit amet viverra egestas. Sed vitae elementum massa. Mauris erat quam, scelerisque a erat et, aliquet tincidunt nisl.
+
+Nulla mollis commodo interdum. Integer odio nulla, lacinia ut odio vulputate, cursus dapibus orci. Suspendisse accumsan diam risus, eu efficitur enim tincidunt et. Duis elementum enim non quam porta, et cursus risus vulputate. Suspendisse at orci pellentesque, pulvinar risus in, dapibus felis. Nunc posuere, nibh a tincidunt tempus, enim nibh semper est, eget faucibus nisl nisl eget lectus. Integer malesuada suscipit sem, eget commodo velit molestie in. Donec gravida nec lectus et auctor. Sed sit amet suscipit odio. Curabitur at ultrices dui. Pellentesque sollicitudin pulvinar tellus eu gravida. Duis non dui ac nulla finibus tincidunt eu quis neque. Mauris ac faucibus lectus.

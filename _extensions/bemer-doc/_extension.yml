@@ -1,0 +1,47 @@
+title: Bemer Document
+author: Pascal Burkhard
+version: 1.0.0
+contributes:
+  format:
+    pdf:
+      template-partials:
+        - title.tex
+        - pandoc.tex
+        - before-body.tex
+        - after-body.tex
+      include-in-header: 
+        - header-setup.tex
+      logo: bemerpartner.png
+      documentclass: scrlttr2
+      papersize: a4
+      colorlinks: false
+      lang: fr-CH
+      geometry:
+        - bindingoffset=0cm
+        - left=2cm
+        - right=2cm
+        - top=4.5cm
+        - bottom=3cm
+        - headsep=.5cm
+        - headheight=4cm
+      mainfont: FiraSans
+      mainfontoptions:
+        - Extension = .otf
+        - Path = /Library/Fonts/
+        - UprightFont = *-Light
+        - ItalicFont = *-LightItalic
+        - BoldFont = *-Regular
+        - BoldItalicFont = *-Italic
+      sansfont: FiraSans
+      sansfontoptions:
+        - Extension = .otf
+        - Path = /Library/Fonts/
+        - UprightFont = *-Light
+        - ItalicFont = *-LightItalic
+        - BoldFont = *-Regular
+        - BoldItalicFont = *-Italic
+      mathfont: FiraMath-Light
+      mathfontoptions:
+        - Path = /Library/Fonts/
+        - Extension = .otf
+      
