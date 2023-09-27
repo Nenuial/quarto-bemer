@@ -1,6 +1,6 @@
 title: Bemer Letter
 author: Pascal Burkhard
-version: 1.1.1
+version: 1.1.2
 contributes:
   format:
     pdf:
@@ -28,6 +28,7 @@ contributes:
       mainfont: FiraSans
       mainfontoptions:
         - Extension = .otf
+        - Path = /Library/Fonts/
         - UprightFont = *-Light
         - ItalicFont = *-LightItalic
         - BoldFont = *-Regular
@@ -35,6 +36,7 @@ contributes:
       sansfont: FiraSans
       sansfontoptions:
         - Extension = .otf
+        - Path = /Library/Fonts/
         - UprightFont = *-Light
         - ItalicFont = *-LightItalic
         - BoldFont = *-Regular

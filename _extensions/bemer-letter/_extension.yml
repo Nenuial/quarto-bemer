@@ -25,6 +25,7 @@ contributes:
       mainfont: FiraSans
       mainfontoptions:
         - Extension = .otf
+        - Path = /Library/Fonts/
         - UprightFont = *-Light
         - ItalicFont = *-LightItalic
         - BoldFont = *-Regular
@@ -32,6 +33,7 @@ contributes:
       sansfont: FiraSans
       sansfontoptions:
         - Extension = .otf
+        - Path = /Library/Fonts/
         - UprightFont = *-Light
         - ItalicFont = *-LightItalic
         - BoldFont = *-Regular
@@ -40,4 +42,3 @@ contributes:
       mathfontoptions:
         - Path = /Library/Fonts/
         - Extension = .otf
-      
