@@ -6,7 +6,7 @@ Voici le détail de votre facture :
 \pgfmathprintnumberto[/pgf/fpu=true, /pgf/number format/fixed, /pgf/number format/precision=2, /pgf/number format/fixed zerofill, /pgf/number format/1000 sep={'}]{\SubTot}{\FacTot}
 \pgfmathprintnumberto[/pgf/fpu=true, /pgf/number format/fixed, /pgf/number format/precision=2, /pgf/number format/fixed zerofill, /pgf/number format/1000 sep={}]{\SubTot}{\FacQRTot}
 
-\global\edef\facamount{\SubTot}
+\global\edef\facamount{\SubTot 0}
 
 \begin{tabular}{@{}p{2.5cm}@{} @{}p{8.5cm}@{} @{}R{2.5cm}@{} @{}R{3.5cm}@{}}
 	\textbf{Réf.} & \textbf{Désignation} & \textbf{Quantité} & \textbf{Montant}
@@ -37,10 +37,12 @@ Voici le détail de votre facture :
 	
 	\multicolumn{3}{r@{}}{\textbf{Total}} & \uline{$$\mathbf{\FacTot}$$\BemerCurrency}\\
 \end{tabular}
+$if(warranty)$Les appareils BEMER sont garantie 3 ans.$endif$
 
 \vspace{1cm}
 \textbf{Paiement net à 30 jours.}
 \vspace{1cm}
+
 
 
 $if(closing)$\closing{$closing$}$endif$
@@ -67,7 +69,7 @@ $if(ps)$\ps{$ps$}$endif$
     $zip$\\
     $toplace$\\
     $country$},
-  Amount=\facamount 0,
+  Amount=\facamount,
   Message=Facture $fac-num$,
   invoicenum=$fac-num$,
 ]
