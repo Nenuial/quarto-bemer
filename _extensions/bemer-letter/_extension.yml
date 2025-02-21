@@ -42,3 +42,4 @@ contributes:
       mathfontoptions:
         - Path = /Library/Fonts/
         - Extension = .otf
+source: nenuial/quarto-bemer
