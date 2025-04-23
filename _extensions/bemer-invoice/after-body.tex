@@ -6,7 +6,7 @@ Voici le détail de votre facture :
 \pgfmathprintnumberto[/pgf/fpu=true, /pgf/number format/fixed, /pgf/number format/precision=2, /pgf/number format/fixed zerofill, /pgf/number format/1000 sep={'}]{\SubTot}{\FacTot}
 \pgfmathprintnumberto[/pgf/fpu=true, /pgf/number format/fixed, /pgf/number format/precision=2, /pgf/number format/fixed zerofill, /pgf/number format/1000 sep={}]{\SubTot}{\FacQRTot}
 
-\global\edef\facamount{\SubTot 0}
+\global\edef\facamount{\SubTot}
 
 \begin{tabular}{@{}p{2.5cm}@{} @{}p{8.5cm}@{} @{}R{2.5cm}@{} @{}R{3.5cm}@{}}
 	\textbf{Réf.} & \textbf{Désignation} & \textbf{Quantité} & \textbf{Montant}

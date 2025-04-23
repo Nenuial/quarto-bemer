@@ -1,6 +1,6 @@
 title: Bemer Letter
 author: Pascal Burkhard
-version: 1.1.8
+version: 1.1.9
 contributes:
   format:
     pdf:
