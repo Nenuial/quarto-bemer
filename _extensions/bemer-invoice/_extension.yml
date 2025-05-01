@@ -1,6 +1,6 @@
 title: Bemer Letter
 author: Pascal Burkhard
-version: 1.1.9
+version: 1.1.10
 contributes:
   format:
     pdf:
@@ -11,7 +11,8 @@ contributes:
         - title.tex
         - before-body.tex
         - after-body.tex
-      include-in-header: 
+      include-in-header:
+        - header-setup.tex
         - datetime-header.tex
         - qrbill-header.tex
         - datatool-header.tex
